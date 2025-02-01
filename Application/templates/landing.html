@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing</title>
+    <title>DigiPredict Landing</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
 </head>
 <body>
 
     <div class="container">
-        <h1>Digipredict:</h1>
-        <p>Identifying handwritten numbers real-time.</p>
+        <h1>DigiPredict:</h1>
+        <p>Identifying handwritten numbers easily.</p>
 
         <div class="content">
             <div class="left">
-                <button class="btn">Register</button>
-                <button class="btn">Login</button>
+                <a href="{{ url_for('register') }}"><button class="btn">Register</button></a>
+                <a href="{{ url_for('login') }}"><button class="btn">Login</button></a>
             </div>
             <div class="divider"></div>
             <div class="right">
@@ -24,6 +25,6 @@
             </div>
         </div>
     </div>
-    
+
 </body>
 </html>

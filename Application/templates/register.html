@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - DigiPredict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>DigiPredict:</h1>
+        <p>Identifying handwritten numbers easily.</p>
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-container">
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <div class="content">
+                <div class="left">
+                    <input type="text" name="username" placeholder="Username" required class="input-field">
+                    <input type="password" name="password" placeholder="Password" required class="input-field">
+                    <button class="btn">→</button>
+                </div>
+                <div class="divider"></div>
+                <div class="right">
+                    <h3>Why it's good</h3>
+                    <div class="image-placeholder">[Image]</div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

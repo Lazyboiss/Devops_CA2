@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -5,17 +6,94 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f8f8f8;
+    margin: 0;
 }
 
+/* Main Container */
 .container {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 400px;
+    width: 450px;
+    max-width: 90%;
 }
 
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    width: 120px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Flash Message Container */
+.flash-container {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.flash-message {
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Success Message */
+.success {
+    background-color: #28a745;
+    color: white;
+}
+
+.danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Warning Message */
+.warning {
+    background-color: #ffc107;
+    color: black;
+}
+
+/* Info Message */
+.info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+/* Page Titles */
+.page-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.main-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Layout for Content */
 .content {
     display: flex;
     justify-content: space-between;
@@ -23,6 +101,7 @@ body {
     margin-top: 20px;
 }
 
+/* Left and Right Sections */
 .left, .right {
     width: 45%;
     display: flex;
@@ -30,26 +109,47 @@ body {
     align-items: center;
 }
 
+/* Divider */
 .divider {
     width: 2px;
-    height: 80px;
+    height: 100px;
     background: gray;
 }
 
-.btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
+/* Input Fields */
+.input-field {
+    width: 100%;
     padding: 10px;
-    margin: 5px;
-    cursor: pointer;
-    width: 100px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    text-align: center;
 }
 
+/* Forgot Password Link */
+.forgot-password {
+    font-size: 12px;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Buttons Container */
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Adds spacing between buttons */
+}
+
+/* Image Placeholder */
 .image-placeholder {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     background: #ccc;
     display: flex;
     align-items: center;
@@ -57,4 +157,26 @@ body {
     font-size: 12px;
     color: #666;
     border: 1px solid #999;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 600px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .divider {
+        width: 80%;
+        height: 2px;
+        margin: 10px 0;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .btn {
+        width: 80%;
+    }
 }
