@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    
+
     <div class="container">
+        <!-- Flash Messages -->
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 <div class="flash-container">
@@ -19,9 +20,29 @@
             {% endif %}
         {% endwith %}
 
-        <h2>Welcome, {{ username }}</h2>
-        <p>You have successfully logged in.</p>
-        <a href="{{ url_for('logout') }}"><button class="btn">Logout</button></a>
+        <h2>Home</h2>
+        <h1>What will you predict today, {{ username }}? 🔮</h1>
+
+        <!-- Buttons Section -->
+        <div class="button-container">
+            <button class="btn">Generate an Image</button>
+            <button class="btn">View History</button>
+            <button class="btn">Play Game!</button>
+        </div>
+
+        <!-- How it Works Section -->
+        <h3>How it works</h3>
+        <div class="how-it-works">
+            <div class="text-section">
+                <p>text text</p>
+                <p>text text</p>
+                <p>text text</p>
+                <p>text text</p>
+            </div>
+            <div class="image-placeholder">[Image]</div>
+        </div>
+
+        <a href="{{ url_for('logout') }}"><button class="btn logout">Logout</button></a>
     </div>
 
 </body>

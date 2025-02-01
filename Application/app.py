@@ -64,7 +64,7 @@ def login():
 
     return render_template("login.html")
 
-@app.route("/home")
+@app.route('/home')
 def home():
     if "user" not in session:
         flash("Please log in first!", "warning")
