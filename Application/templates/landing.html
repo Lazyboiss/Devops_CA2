@@ -3,28 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiPredict Landing</title>
+    <title>Scribbly Landing</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-
 </head>
 <body>
 
-    <div class="container">
-        <h1>DigiPredict:</h1>
-        <p>Identifying handwritten numbers easily.</p>
+    <div class="main-container">
+        <!-- Left Half -->
+         <div class="left-section">
+            <div class="title-container">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Scribbly Logo" class="logo">
+                <h1>Scribbly</h1>
+            </div>
+            <p class="caption">Your Image Generation Companion</p>
 
-        <div class="content">
-            <div class="left">
+            <div class="button-group">
                 <a href="{{ url_for('register') }}"><button class="btn">Register</button></a>
                 <a href="{{ url_for('login') }}"><button class="btn">Login</button></a>
             </div>
-            <div class="divider"></div>
-            <div class="right">
-                <h3>How it works</h3>
-                <div class="image-placeholder">[Image]</div>
-            </div>
-        </div>
+         </div>
+
+         <!-- Right Half -->
+          <div class="right-section">
+                <h3 class="carousel-title">How it Works</h3>
+                <div class="carousel">
+                    <button class="carousel-btn prev" onclick="prevSlide()">⟨</button>
+                    <div class="carousel-content">
+                        <img src="{{ url_for('static', filename='images/homepage_slide1.png') }}" id="carousel-image" alt="Feature Image">
+                        <p id="carousel-text">Scribbly is designed for rapid image generation. Within seconds, generate new handwritten characters using advanced AI.</p>
+                    </div>
+                    <button class="carousel-btn next" onclick="nextSlide()">⟩</button>
+                </div>
+          </div>
     </div>
 
+    <script src="{{ url_for('static', filename='carousel.js') }}"></script>
 </body>
 </html>

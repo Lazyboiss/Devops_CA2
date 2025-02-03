@@ -5,40 +5,124 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f8f8f8;
+    background: linear-gradient(to bottom right, #cce7ff, #99cfff); /* Light Blue Gradient */
     margin: 0;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
 }
 
-/* Main Container */
-.container {
-    background: white;
-    padding: 20px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Main Container: Two-column layout */
+.main-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 80%;
+    max-width: 900px;
+    height: 70%;
+    max-height: 800px;
+    margin: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 450px;
-    max-width: 90%;
+    overflow: hidden;
 }
 
-.btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    width: 120px;
-    border-radius: 5px;
+/* Left Section: Scribbly Content */
+.left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: white;
+    padding-top: 20px;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.caption {
     font-size: 16px;
-    font-weight: bold;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Main Container: Two-column layout */
+.main-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 80%;
+    max-width: 900px;
+    height: 70%;
+    max-height: 800px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Left Section: Form and Branding */
+.left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    transition: background 0.3s ease;
+    background: white;
+    padding: 20px;
+    position: relative;
 }
 
-.btn:hover {
-    background-color: #0056b3;
+/* Right Section: Additional Info */
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6f2ff; /* Light blue background */
 }
 
-/* Flash Message Container */
+/* Input Fields */
+.input-field {
+    width: 80%;
+    max-width: 200px;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* Flash Messages */
 .flash-container {
     width: 100%;
     margin-bottom: 15px;
@@ -53,7 +137,144 @@ body {
     font-weight: bold;
 }
 
-/* Success Message */
+/* Buttons */
+.btn {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #004c99;
+}
+/* Back Button */
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Right Section: Carousel */
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6f2ff; /* Light blue background */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Carousel Content */
+.carousel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 1; /* Ensure default visibility */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-content.active {
+    opacity: 1;
+}
+
+.carousel img {
+    width: 100px; /* Adjust size if needed */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 1; /* Ensure visibility */
+    transition: opacity 0.5s ease-in-out;
+}
+/* Styled Carousel Buttons */
+.carousel-btn {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.carousel p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    opacity: 1; /* Ensure visibility */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-btn:hover {
+    opacity: 1;
+}
+
+.input-field {
+    width: 80%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Flash Messages */
+.flash-container {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.flash-message {
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Flash Message Types */
 .success {
     background-color: #28a745;
     color: white;
@@ -64,116 +285,28 @@ body {
     color: white;
 }
 
-/* Warning Message */
 .warning {
     background-color: #ffc107;
     color: black;
 }
 
-/* Info Message */
 .info {
     background-color: #17a2b8;
     color: white;
 }
 
-/* Page Titles */
-.page-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.main-title {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.subtitle {
-    color: #555;
-    margin-bottom: 20px;
-}
-
-/* Layout for Content */
-.content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-
-/* Left and Right Sections */
-.left, .right {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Divider */
-.divider {
-    width: 2px;
-    height: 100px;
-    background: gray;
-}
-
-/* Input Fields */
-.input-field {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-}
-
-/* Forgot Password Link */
-.forgot-password {
-    font-size: 12px;
-    color: #007bff;
-    text-decoration: none;
-    margin-bottom: 10px;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-/* Buttons Container */
-.left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px; /* Adds spacing between buttons */
-}
-
-/* Image Placeholder */
-.image-placeholder {
-    width: 100px;
-    height: 100px;
-    background: #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: #666;
-    border: 1px solid #999;
-}
-
-/* RESPONSIVENESS */
+/* Responsive Design */
 @media (max-width: 600px) {
-    .content {
+    .main-container {
         flex-direction: column;
+    }
+
+    .button-group {
         align-items: center;
     }
 
-    .divider {
-        width: 80%;
-        height: 2px;
-        margin: 10px 0;
-    }
-
-    .left, .right {
-        width: 100%;
+    .carousel {
+        flex-direction: column;
     }
 
     .btn {
