@@ -64,6 +64,12 @@ def login():
 
     return render_template("login.html")
 
+@app.route("/logout")
+def logout():
+    session.clear()
+    flash("You have been logged out.", "info")
+    return redirect(url_for("landing"))
+
 @app.route('/home')
 def home():
     if "user" not in session:
@@ -71,11 +77,26 @@ def home():
         return redirect(url_for("login"))
     return render_template("home.html", username=session["user"])
 
-@app.route("/logout")
-def logout():
-    session.clear()
-    flash("You have been logged out.", "info")
-    return redirect(url_for("login"))
+@app.route("/game", methods=['GET'])
+def game():
+    if "user" not in session:
+        flash("Please log in first!", "warning")
+        return redirect(url_for("login"))
+    return render_template('game.html')
+
+@app.route("/generate", methods=['GET'])
+def generate():
+    if "user" not in session:
+        flash("Please log in first!", "warning")
+        return redirect(url_for("login"))
+    return render_template('generate.html')
+
+@app.route("/history", methods=['GET'])
+def history():
+    if "user" not in session:
+        flash("Please log in first!", "warning")
+        return redirect(url_for("login"))
+    return render_template('history.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
